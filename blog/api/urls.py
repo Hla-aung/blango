@@ -7,6 +7,7 @@ from blog.api.views import UserDetail, TagViewSet, PostViewSet
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 import os
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 schema_view = get_schema_view(
   openapi.Info(
@@ -52,6 +53,8 @@ urlpatterns += [
       PostViewSet.as_view({"get": "list"}),
       name="posts-by-time",
     ),
+        path("jwt/", TokenObtainPairView.as_view(), name="jwt_obtain_pair"),
+    path("jwt/refresh/", TokenRefreshView.as_view(), name="jwt_refresh"), 
 ]
 
 # urlpatterns = format_suffix_patterns(urlpatterns)
