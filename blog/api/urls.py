@@ -2,7 +2,7 @@ from django.urls import path, include, re_path
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken import views
 from rest_framework.routers import DefaultRouter
-# from blog.api.views import PostList, PostDetail, UserDetail, TagViewSet, PostViewSet
+# from blog.api.views import UserDetail, TagViewSet, PostViewSet
 from blog.api.views import UserDetail, TagViewSet, PostViewSet
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
