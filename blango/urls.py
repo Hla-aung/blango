@@ -21,6 +21,7 @@ from django.conf import settings
 from blango_auth import views as blanog_views
 from django_registration.backends.activation.views import RegistrationView
 from blango_auth.forms import BlangoRegistrationForm
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,7 +44,7 @@ urlpatterns = [
 if settings.DEBUG:
   urlpatterns += [
     path("__debug__/", include(debug_toolbar.urls)),
-  ]
+  ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 from django.conf import settings
 print(f"Time zone: {settings.TIME_ZONE}")

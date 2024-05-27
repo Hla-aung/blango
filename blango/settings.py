@@ -231,7 +231,8 @@ class Dev(Configuration):
     # Email Backend for activation Email
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     ACCOUNT_ACTIVATION_DAYS = 7
-
+    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
     # Registration close
     # REGISTRATION_OPEN = False
 
